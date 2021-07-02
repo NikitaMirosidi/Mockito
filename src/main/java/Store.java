@@ -9,19 +9,15 @@ public class Store {
     public float getPrice(String basket) {
 
         if (productCollection.isEmpty()) {
-            setProductCollection();
+            getDataFromDataBase();
         }
 
         setTempProductCollection(basket);
         return calculatePrice();
     }
 
-    private void setProductCollection() {
-
-        productCollection.put('a', new Product(1.25f, 3, 3));
-        productCollection.put('b', new Product(4.25f, 4.25f, 1));
-        productCollection.put('c', new Product(1, 5, 6));
-        productCollection.put('d', new Product(0.75f, 0.75f, 1));
+    private void getDataFromDataBase() {
+        productCollection = new DataBase().setProductCollection();
     }
 
     private void setTempProductCollection(String basket) {
