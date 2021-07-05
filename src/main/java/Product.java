@@ -9,6 +9,10 @@ public class Product {
         this.PROMOTIONAL_QUANTITY = promotionalQuantity;
     }
 
+    public Product (float price) {
+        this (price, price, 1);
+    }
+
     public float getPrice(int quantity) {
         float cost;
         if (quantity < PROMOTIONAL_QUANTITY) {

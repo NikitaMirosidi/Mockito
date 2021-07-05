@@ -10,7 +10,7 @@ public class ProductTest {
     Product product = new Product(price, promotionalPrice, promotionalQuantity);
 
     @Test
-    public void getPrice() {
+    public void TestGetPrice() {
 
         int quantity1 = 2;
         int quantity2 = 3;
