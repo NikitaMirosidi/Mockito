@@ -19,7 +19,6 @@ public class ProductStore implements Store{
     private void getDataFromDataBase() {
 
         if (productCollection.isEmpty()) {
-
             productCollection = new ProductDataBase().setProductCollection();
         }
     }
@@ -38,7 +37,7 @@ public class ProductStore implements Store{
             }
         }
         catch (NullPointerException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
     }
 
