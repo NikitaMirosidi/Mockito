@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class ProductDataBase implements DataBase<Character, ProductForProductStore> {
 
@@ -13,5 +14,18 @@ public class ProductDataBase implements DataBase<Character, ProductForProductSto
         productCollection.put('d', new ProductForProductStore(0.75f));
 
         return productCollection;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ProductDataBase that = (ProductDataBase) o;
+        return Objects.equals(productCollection, that.productCollection);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(productCollection);
     }
 }
