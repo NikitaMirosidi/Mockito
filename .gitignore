@@ -1,4 +1,7 @@
 /.idea
 /out
 *.iml
-.idea target log
+*.iws
+/log
+/target
+
