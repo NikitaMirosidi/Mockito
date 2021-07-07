@@ -3,6 +3,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 public class ProductStore implements Store{
+
     private Map<Character, ProductForProductStore> productCollection = new HashMap<>();
     private Map<Character, Integer> tempProductCollection = new HashMap<>();
 
@@ -16,6 +17,7 @@ public class ProductStore implements Store{
     }
 
     private void getDataFromDataBase() {
+
         if (productCollection.isEmpty()) {
 
             productCollection = new ProductDataBase().setProductCollection();

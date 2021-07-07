@@ -2,6 +2,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class ProductForProductStoreTest {
+
     float price = 1.25f;
     float promotionalPrice = 3;
     int promotionalQuantity = 3;
