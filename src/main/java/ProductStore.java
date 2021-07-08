@@ -4,7 +4,7 @@ import java.util.Map;
 
 public class ProductStore implements Store{
 
-    private Map<Character, ProductForProductStore> productCollection = new HashMap<>();
+    private Map<Character, Product> productCollection = new HashMap<>();
     private Map<Character, Integer> tempProductCollection = new HashMap<>();
 
     public float getPrice(String basket) {
@@ -19,7 +19,8 @@ public class ProductStore implements Store{
     private void getDataFromDataBase() {
 
         if (productCollection.isEmpty()) {
-            productCollection = new ProductDataBase().setProductCollection();
+            DataBase<Character, Product> dataBase = new ProductDataBase();
+            productCollection = dataBase.setProductCollection();
         }
     }
 
@@ -37,7 +38,7 @@ public class ProductStore implements Store{
             }
         }
         catch (NullPointerException e) {
-            //e.printStackTrace();
+            System.out.println("Передан null! Будет возвращенна цена пустой корзины - \"0\"");
         }
     }
 

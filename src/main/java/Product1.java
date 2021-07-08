@@ -1,17 +1,17 @@
-public class ProductForProductStore implements Product{
+public class Product1 implements Product {
 
     private final float PRICE;
     private final float PROMOTIONAL_PRICE;
     private final int PROMOTIONAL_QUANTITY;
 
-    public ProductForProductStore(float price, float promotionalPrice, int promotionalQuantity) {
+    public Product1(float price, float promotionalPrice, int promotionalQuantity) {
 
         this.PRICE = price;
         this.PROMOTIONAL_PRICE = promotionalPrice;
         this.PROMOTIONAL_QUANTITY = promotionalQuantity;
     }
 
-    public ProductForProductStore(float price) {
+    public Product1(float price) {
 
         this (price, price, 1);
     }

@@ -2,16 +2,16 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-public class ProductDataBase implements DataBase<Character, ProductForProductStore> {
+public class ProductDataBase implements DataBase<Character, Product> {
 
-    private Map<Character, ProductForProductStore> productCollection = new HashMap<>();
+    private Map<Character, Product> productCollection = new HashMap<>();
 
-    public Map<Character, ProductForProductStore> setProductCollection() {
+    public Map<Character, Product> setProductCollection() {
 
-        productCollection.put('a', new ProductForProductStore(1.25f, 3, 3));
-        productCollection.put('b', new ProductForProductStore(4.25f));
-        productCollection.put('c', new ProductForProductStore(1, 4.25f, 6));
-        productCollection.put('d', new ProductForProductStore(0.75f));
+        productCollection.put('a', new Product1(1.25f, 3, 3));
+        productCollection.put('b', new Product1(4.25f));
+        productCollection.put('c', new Product1(1, 4.25f, 6));
+        productCollection.put('d', new Product1(0.75f));
 
         return productCollection;
     }

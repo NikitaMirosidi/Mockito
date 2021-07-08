@@ -1,46 +1,55 @@
 import org.junit.Assert;
 import org.junit.Test;
-import org.mockito.Mockito;
 
 public class ProductStoreTest {
 
+    public Store store = new ProductStore();
+
     @Test
-    public void GetPriceShouldSuccess1() {
+    public void shouldSuccessGetPriceWithStringInUpperCase() {
 
         String test = "ABCDABA";
 
-        Assert.assertEquals(13.25, new ProductStore().getPrice(test),0.001);
+        Assert.assertEquals(13.25, store.getPrice(test),0.001);
     }
 
     @Test
-    public void GetPriceShouldSuccess2() {
+    public void shouldSuccessGetPriceWithStringInLowerCase() {
 
         String test = "abcdaba";
 
-        Assert.assertEquals(13.25, new ProductStore().getPrice(test),0.001);
+        Assert.assertEquals(13.25, store.getPrice(test),0.001);
     }
 
     @Test
-    public void GetPriceShouldSuccess3() {
+    public void shouldSuccessGetPriceWithRandomChars() {
 
         String test = "f a,@B' c)/d Ж+a.Rb $a ";
 
-        Assert.assertEquals(13.25, new ProductStore().getPrice(test),0.001);
+        Assert.assertEquals(13.25, store.getPrice(test),0.001);
     }
 
     @Test
-    public void GetPriceShouldSuccess4() {
+    public void shouldReturnZeroWithEmptyString() {
 
         String test = "";
 
-        Assert.assertEquals(0, new ProductStore().getPrice(test),0.001);
+        Assert.assertEquals(0, store.getPrice(test),0.001);
     }
 
     @Test
-    public void GetPriceShouldSuccess5() {
+    public void shouldReturnZeroWithUnknownProduct() {
+
+        String test = "GJTXLRU";
+
+        Assert.assertEquals(0, store.getPrice(test),0.001);
+    }
+
+    @Test
+    public void shouldReturnZeroWithNull() {
 
         String test = null;
 
-        Assert.assertEquals(0, new ProductStore().getPrice(test),0.001);
+        Assert.assertEquals(0, store.getPrice(test),0.001);
     }
 }

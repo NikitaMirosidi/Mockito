@@ -2,14 +2,19 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-public class SubMainTest {
+public class ProductStoreMockitoTest {
 
     public ProductStore productStore = Mockito.mock(ProductStore.class);
+    public String test = "";
+
+    {
+        Mockito.when(productStore.getPrice(test)).thenReturn(test.hashCode() * 0.1f);
+    }
 
     @Test
-    public void storeShouldSuccess1() {
-        String test = "ABCDABA";
-        Mockito.when(productStore.getPrice(Mockito.anyString())).thenReturn(test.hashCode() * 0.1f);
+    public void shouldGetPriceReturnSomeSpecificFloatForAnyString1() {
+
+        test = "ABCDABA";
 
         Assert.assertEquals(Float.class, Float.valueOf(productStore.getPrice(test)).getClass());
 
@@ -18,9 +23,9 @@ public class SubMainTest {
     }
 
     @Test
-    public void storeShouldSuccess2() {
-        String test = "dgslzkglkwgphertfgh43t0243t+-r235>";
-        Mockito.when(productStore.getPrice(Mockito.anyString())).thenReturn(test.hashCode() * 0.1f);
+    public void shouldGetPriceReturnSomeSpecificFloatForAnyString2() {
+
+        test = "dgslzkglkwgphertfgh43t0243t+-r235>";
 
         Assert.assertEquals(Float.class, Float.valueOf(productStore.getPrice(test)).getClass());
 
