@@ -8,10 +8,10 @@ public class ProductDataBase implements DataBase<Character, Product> {
 
     public Map<Character, Product> setProductCollection() {
 
-        productCollection.put('a', new Product1(1.25f, 3, 3));
-        productCollection.put('b', new Product1(4.25f));
-        productCollection.put('c', new Product1(1, 4.25f, 6));
-        productCollection.put('d', new Product1(0.75f));
+        productCollection.put('a', new ProductImpl(1.25f, 3, 3));
+        productCollection.put('b', new ProductImpl(4.25f));
+        productCollection.put('c', new ProductImpl(1, 4.25f, 6));
+        productCollection.put('d', new ProductImpl(0.75f));
 
         return productCollection;
     }

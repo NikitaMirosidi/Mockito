@@ -1,15 +1,15 @@
 import org.junit.Assert;
 import org.junit.Test;
 
-public class Product1Test {
+public class ProductImplTest {
 
     float price = 1.25f;
     float promotionalPrice = 3;
     int promotionalQuantity = 3;
-    Product product = new Product1(price, promotionalPrice, promotionalQuantity);
+    Product product = new ProductImpl(price, promotionalPrice, promotionalQuantity);
 
     @Test
-    public void ShouldSuccessGetPriceWithQuantityBelowPromotionalQuantity() {
+    public void shouldSuccessGetPriceWithQuantityBelowPromotionalQuantity() {
 
         int testQuantity = 2;
 
@@ -17,7 +17,7 @@ public class Product1Test {
     }
 
     @Test
-    public void ShouldSuccessGetPriceWithQuantityEqualsPromotionalQuantity() {
+    public void shouldSuccessGetPriceWithQuantityEqualsPromotionalQuantity() {
 
         int testQuantity = 3;
 
@@ -25,7 +25,7 @@ public class Product1Test {
     }
 
     @Test
-    public void ShouldSuccessGetPriceWithQuantityAbovePromotionalQuantity() {
+    public void shouldSuccessGetPriceWithQuantityAbovePromotionalQuantity() {
 
         int testQuantity = 4;
 
